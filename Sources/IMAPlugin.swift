@@ -8,7 +8,12 @@
 // https://www.gnu.org/licenses/agpl-3.0.html
 // ===================================================================================================
 
+#if os(iOS)
 import GoogleInteractiveMediaAds
+#elseif os(tvOS)
+import GoogleInteractiveMediaAdsTvOS
+#endif
+
 import PlayKit
 import PlayKitUtils
 

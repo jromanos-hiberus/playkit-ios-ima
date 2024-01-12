@@ -8,11 +8,13 @@
 // https://www.gnu.org/licenses/agpl-3.0.html
 // ===================================================================================================
 
-import GoogleInteractiveMediaAds
+#if os(tvOS)
+import GoogleInteractiveMediaAdsTvOS
 
-extension IMADAIPlugin {
+extension IMAPlugin {
     static func createAdDisplayContainer(forView view: UIView, viewController: UIViewController?, withCompanionView companionView: UIView? = nil) -> IMAAdDisplayContainer {
         // tvOS doesn't support companionView.
         return IMAAdDisplayContainer(adContainer: view, viewController: viewController)
     }
 }
+#endif

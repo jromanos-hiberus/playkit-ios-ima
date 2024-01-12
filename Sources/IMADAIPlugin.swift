@@ -1,5 +1,10 @@
 
+#if os(iOS)
 import GoogleInteractiveMediaAds
+#elseif os(tvOS)
+import GoogleInteractiveMediaAdsTvOS
+#endif
+
 import PlayKit
 import PlayKitUtils
 

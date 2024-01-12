@@ -9,7 +9,11 @@
 // ===================================================================================================
 
 import Foundation
+#if os(iOS)
 import GoogleInteractiveMediaAds
+#elseif os(tvOS)
+import GoogleInteractiveMediaAdsTvOS
+#endif
 
 @objc public class IMAConfig: NSObject {
     

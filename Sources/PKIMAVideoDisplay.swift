@@ -1,8 +1,14 @@
 
 
 import Foundation
-import GoogleInteractiveMediaAds
 import PlayKit
+
+#if os(iOS)
+import GoogleInteractiveMediaAds
+#elseif os(tvOS)
+import GoogleInteractiveMediaAdsTvOS
+#endif
+
 
 @objc public class PKIMAVideoDisplay: NSObject, IMAVideoDisplay, AdsDAIPlayerEngineWrapperDelegate {
     

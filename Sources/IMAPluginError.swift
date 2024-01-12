@@ -9,8 +9,14 @@
 // ===================================================================================================
 
 import Foundation
-import GoogleInteractiveMediaAds
 import PlayKit
+
+#if os(iOS)
+import GoogleInteractiveMediaAds
+#elseif os(tvOS)
+import GoogleInteractiveMediaAdsTvOS
+#endif
+
 
 /// `IMAPluginError` used to wrap an `IMAAdError` and provide converation to `NSError`
 struct IMAPluginError: PKError {
